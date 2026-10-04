@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OSMFJ パンフレット</title>
+  <meta name="description" content="OpenStreetMap Foundation Japan パンフレット（W 折り）のプレビューと PDF">
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --surface: #ffffff;
+      --text: #231f20;
+      --muted: #5f6360;
+      --accent: #00a84f;
+      --border: #dfe3dc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161816;
+        --surface: #202320;
+        --text: #e8ebe6;
+        --muted: #a3a9a2;
+        --accent: #4cc77e;
+        --border: #333833;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+      line-height: 1.7;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+    h1 { font-size: 1.6rem; margin: 0 0 4px; }
+    .lead { color: var(--muted); margin: 0 0 32px; }
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    h2 { font-size: 1.15rem; margin: 0 0 4px; }
+    .note { color: var(--muted); font-size: 0.9rem; margin: 0 0 16px; }
+    figure { margin: 0 0 16px; }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .links a {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .links a:hover { background: var(--accent); color: var(--surface); }
+    footer { color: var(--muted); font-size: 0.85rem; }
+    footer a { color: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>OSMFJ パンフレット</h1>
+    <p class="lead">仕上がり 297 × 106.1 mm、4 面の W 折り</p>
+
+    <section>
+      <h2>表面（外側）</h2>
+      <p class="note">右端の面が表紙です。</p>
+      <figure>
+        <a href="front.pdf"><img src="front.png" alt="パンフレット表面のプレビュー" width="1754" height="627"></a>
+      </figure>
+      <div class="links">
+        <a href="front.pdf">PDF（トンボなし）</a>
+        <a href="front-marks.pdf">PDF（トンボ・塗り足し付き）</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>裏面（内側）</h2>
+      <p class="note">「私たちの自由な世界地図でもっと面白い、役に立つ。」の見開き 4 面です。</p>
+      <figure>
+        <a href="back.pdf"><img src="back.png" alt="パンフレット裏面のプレビュー" width="1754" height="627"></a>
+      </figure>
+      <div class="links">
+        <a href="back.pdf">PDF（トンボなし）</a>
+        <a href="back-marks.pdf">PDF（トンボ・塗り足し付き）</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>ソース: <a href="https://github.com/openstreetmap-japan/booklet">openstreetmap-japan/booklet</a></p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -13,6 +13,9 @@ OSMFJ パンフレット 2016（増刷 2）の入稿データ（Illustrator フ�
 | `back.typ` | 裏面（内側）。元データは `02_OSMFJパンフレット2016裏_増刷2.ai` |
 | `style.typ` | 共通設定（ページサイズ、色、フォント、トンボ、配置用のヘルパー） |
 | `image/` | 写真・地図・ロゴ・イラスト |
+| `html/index.html` | GitHub Pages で公開するプレビューページ |
+| `build.sh` | PDF とプレビュー画像をまとめて `html/` に出力するスクリプト |
+| `.github/workflows/pages.yml` | ビルドして GitHub Pages に公開するワークフロー |
 
 ## 必要なもの
 
@@ -24,6 +27,16 @@ OSMFJ パンフレット 2016（増刷 2）の入稿データ（Illustrator フ�
 使えるフォントは `typst fonts` で確認できます。
 
 ## ビルド方法
+
+### まとめてビルドする
+
+PDF 4 つ（表面・裏面 × トンボの有無）とプレビュー用の PNG を `html/` に出力します。
+
+```sh
+./build.sh
+```
+
+`html/index.html` をブラウザで開くと、公開されるページと同じものを確認できます。
 
 ### 画面表示・PDF 配布用（トンボなし）
 
@@ -56,6 +69,14 @@ typst watch front.typ
 ```sh
 typst compile --ppi 200 front.typ front.png
 ```
+
+## 公開（GitHub Pages）
+
+`main` に push すると、GitHub Actions が `build.sh` を実行して `html/` を GitHub Pages に公開します。Actions の画面から手動で実行することもできます（workflow_dispatch）。
+
+- 公開先: https://openstreetmap.jp/booklet/
+- ヒラギノ角ゴと Helvetica Neue を使うため、ビルドは macOS のランナーで行います
+- PDF と PNG はビルドで作るので、リポジトリには入れていません（`.gitignore` で除外）
 
 ## 補足
 
