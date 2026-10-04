@@ -69,9 +69,46 @@
     .links a:hover { background: var(--accent); color: var(--surface); }
     footer { color: var(--muted); font-size: 0.85rem; }
     footer a { color: inherit; }
+    /* Fork me on GitHub リボン */
+    .forkme {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .forkme a {
+      position: absolute;
+      top: 38px;
+      right: -46px;
+      width: 220px;
+      padding: 6px 0;
+      transform: rotate(45deg);
+      background: var(--accent);
+      color: #fff;
+      font: 700 13px/1.4 system-ui, sans-serif;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      border-top: 1px dashed rgba(255, 255, 255, 0.6);
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.6);
+      outline-offset: -4px;
+      pointer-events: auto;
+    }
+    .forkme a:hover { filter: brightness(1.1); }
+    @media (max-width: 600px) {
+      .forkme { width: 110px; height: 110px; }
+      .forkme a { top: 26px; right: -52px; font-size: 11px; }
+    }
   </style>
 </head>
 <body>
+  <div class="forkme">
+    <a href="https://github.com/openstreetmap-japan/booklet">Fork me on GitHub</a>
+  </div>
   <main>
     <h1>OSMFJ パンフレット</h1>
     <p class="lead">仕上がり 297 × 106.1 mm、4 面の W 折り</p>
